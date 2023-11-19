@@ -6,8 +6,8 @@ dotenv.config()
 const pool = mysql.createPool({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
-    password: "1234",
-    database: "notes_app"
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
 }).promise()   // Since we used promise we gonne use async await version rather than old callback version.
 
 //In callback version we use .then after each query but in promise we need async function and store them in a variable.
